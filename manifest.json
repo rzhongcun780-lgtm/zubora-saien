@@ -1,0 +1,19 @@
+{
+  "name": "ズボラ菜園",
+  "short_name": "ズボラ菜園",
+  "description": "かんたん家庭菜園管理アプリ",
+  "start_url": "/zubora-saien/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#4CAF50",
+  "orientation": "portrait",
+  "lang": "ja",
+  "icons": [
+    {
+      "src": "icon_512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
