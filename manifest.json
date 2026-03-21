@@ -24,28 +24,28 @@
   "screenshots": [
     {
       "src": "screenshots/screenshot_01_today.png",
-      "sizes": "390x844",
+      "sizes": "1125x2436",
       "type": "image/png",
       "form_factor": "narrow",
       "label": "今日やること"
     },
     {
       "src": "screenshots/screenshot_02_crops.png",
-      "sizes": "390x844",
+      "sizes": "1125x2436",
       "type": "image/png",
       "form_factor": "narrow",
       "label": "作物リスト"
     },
     {
       "src": "screenshots/screenshot_03_register.png",
-      "sizes": "390x844",
+      "sizes": "1125x2436",
       "type": "image/png",
       "form_factor": "narrow",
       "label": "作物を登録"
     },
     {
       "src": "screenshots/screenshot_04_shop.png",
-      "sizes": "390x844",
+      "sizes": "1125x2436",
       "type": "image/png",
       "form_factor": "narrow",
       "label": "資材商店"
