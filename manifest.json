@@ -1,6 +1,7 @@
 {
   "name": "ズボラ菜園",
   "short_name": "ズボラ菜園",
+  "id": "/zubora-saien/",
   "description": "かんたん家庭菜園管理アプリ",
   "start_url": "/zubora-saien/",
   "display": "standalone",
@@ -8,12 +9,46 @@
   "theme_color": "#4CAF50",
   "orientation": "portrait",
   "lang": "ja",
+  "categories": [
+    "lifestyle",
+    "utilities"
+  ],
   "icons": [
     {
       "src": "icon_512.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "screenshots/screenshot_01_today.png",
+      "sizes": "390x844",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "今日やること"
+    },
+    {
+      "src": "screenshots/screenshot_02_crops.png",
+      "sizes": "390x844",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "作物リスト"
+    },
+    {
+      "src": "screenshots/screenshot_03_register.png",
+      "sizes": "390x844",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "作物を登録"
+    },
+    {
+      "src": "screenshots/screenshot_04_shop.png",
+      "sizes": "390x844",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "資材商店"
     }
   ]
 }
