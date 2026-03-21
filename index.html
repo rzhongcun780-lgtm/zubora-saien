@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
-<title>ズボラ菜園 - デモ</title>
+<title>ãºãã©èå - ãã¢</title>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&display=swap" rel="stylesheet">
 <style>
 *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
@@ -31,7 +31,7 @@ body{font-family:'Noto Sans JP',sans-serif;background:#F5F0EA;color:#1A1008;min-
 .task-top{display:flex;gap:8px;align-items:flex-start}
 .chk{width:22px;height:22px;border-radius:50%;border:2px solid #E0D8CE;background:#fff;flex-shrink:0;cursor:pointer;margin-top:1px;display:flex;align-items:center;justify-content:center;transition:all .2s}
 .chk.done{background:#2E7D32;border-color:#2E7D32}
-.chk.done::after{content:'✓';color:#fff;font-size:12px;font-weight:700}
+.chk.done::after{content:'â';color:#fff;font-size:12px;font-weight:700}
 .task-info{flex:1}
 .task-veg{font-size:10px;color:#7A6A5A;font-weight:700;margin-bottom:2px}
 .task-name{font-size:15px;font-weight:700;line-height:1.3}
@@ -42,11 +42,11 @@ body{font-family:'Noto Sans JP',sans-serif;background:#F5F0EA;color:#1A1008;min-
 .c-hi{background:#FFEBEE;color:#C62828}
 .c-mid{background:#FFF8E1;color:#795548}
 .c-water{background:#E3F2FD;color:#1565C0}
-.s-種まき{background:#8D6E63}
-.s-発芽{background:#1565C0}
-.s-成長中・収穫待ち{background:#26A69A}
-.s-収穫中{background:#43A047}
-.s-収穫済み{background:#E65100}
+.s-ç¨®ã¾ã{background:#8D6E63}
+.s-çºè½{background:#1565C0}
+.s-æé·ä¸­ã»åç©«å¾ã¡{background:#26A69A}
+.s-åç©«ä¸­{background:#43A047}
+.s-åç©«æ¸ã¿{background:#E65100}
 .start-badge{display:inline-block;font-size:9px;font-weight:700;padding:1px 5px;border-radius:8px;margin-top:3px;letter-spacing:.3px}
 .badge-nae{background:#E8F5E9;color:#2E7D32;border:1px solid #A5D6A7}
 .badge-tane{background:#FFF8E1;color:#F57F17;border:1px solid #FFE082}
@@ -155,15 +155,19 @@ select.fi,input.fi{width:100%;padding:11px 14px;border-radius:8px;border:1.5px s
 .toggle.on::after{left:22px}
 #pg-plan .plan-badge{display:inline-block;background:#E8F5E9;color:#2E7D32;border:1px solid #A5D6A7;border-radius:20px;padding:3px 10px;font-size:11px;font-weight:700}
 </style>
+
+  <link rel="manifest" href="/zubora-saien/manifest.json">
+  <meta name="theme-color" content="#4CAF50">
+  <meta name="mobile-web-app-capable" content="yes">
 </head>
 <body>
 
 <div class="hdr">
   <div class="hdr-row">
-    <div class="hdr-title">🌱 ズボラ菜園</div>
+    <div class="hdr-title">ð± ãºãã©èå</div>
     <div style="display:flex;align-items:center;gap:8px">
       <div class="hdr-date">2026/3/21</div>
-      <div id="plan-badge" onclick="goPage('plan')" style="font-size:11px;color:#A5D6A7;background:rgba(165,214,167,.15);border:1px solid rgba(165,214,167,.3);border-radius:20px;padding:3px 9px;cursor:pointer">無料</div>
+      <div id="plan-badge" onclick="goPage('plan')" style="font-size:11px;color:#A5D6A7;background:rgba(165,214,167,.15);border:1px solid rgba(165,214,167,.3);border-radius:20px;padding:3px 9px;cursor:pointer">ç¡æ</div>
     </div>
   </div>
 </div>
@@ -171,22 +175,22 @@ select.fi,input.fi{width:100%;padding:11px 14px;border-radius:8px;border:1.5px s
 <!-- TODAY PAGE -->
 <div id="pg-today" class="pg on">
   <div class="hero">
-    <div class="hero-lbl">本日の作業</div>
+    <div class="hero-lbl">æ¬æ¥ã®ä½æ¥­</div>
     <div class="hero-num">3</div>
-    <div class="hero-sub">タスク残り（全5件中）</div>
-    <div class="water-row">💧 水やり 2畝 必要</div>
+    <div class="hero-sub">ã¿ã¹ã¯æ®ãï¼å¨5ä»¶ä¸­ï¼</div>
+    <div class="water-row">ð§ æ°´ãã 2ç å¿è¦</div>
   </div>
 
   <div class="water-banner w3">
-    <div class="water-icon">💧</div>
+    <div class="water-icon">ð§</div>
     <div class="water-body">
-      <div class="water-title">水やりリマインダー</div>
-      <div class="water-desc">畝1（トマト）、畝3（ナス）に水やりが必要です</div>
+      <div class="water-title">æ°´ãããªãã¤ã³ãã¼</div>
+      <div class="water-desc">ç1ï¼ãããï¼ãç3ï¼ãã¹ï¼ã«æ°´ãããå¿è¦ã§ã</div>
     </div>
-    <button class="water-done-btn undone" onclick="this.className='water-done-btn done';this.textContent='✓完了'">水やり</button>
+    <button class="water-done-btn undone" onclick="this.className='water-done-btn done';this.textContent='âå®äº'">æ°´ãã</button>
   </div>
 
-  <div class="sec">📋 今日のタスク</div>
+  <div class="sec">ð ä»æ¥ã®ã¿ã¹ã¯</div>
 
   <div class="task-card">
     <div class="task-stripe" style="background:#43A047"></div>
@@ -194,20 +198,20 @@ select.fi,input.fi{width:100%;padding:11px 14px;border-radius:8px;border:1.5px s
       <div class="task-top">
         <div class="chk"></div>
         <div class="task-info">
-          <div class="task-veg">🍅 トマト・アイコ — 畝1</div>
-          <div class="task-name">脇芽かき・誘引作業</div>
+          <div class="task-veg">ð ãããã»ã¢ã¤ã³ â ç1</div>
+          <div class="task-name">èè½ããã»èªå¼ä½æ¥­</div>
           <div class="chips">
-            <span class="chip c-phase">収穫期</span>
-            <span class="chip c-hi">⚡ 重要</span>
+            <span class="chip c-phase">åç©«æ</span>
+            <span class="chip c-hi">â¡ éè¦</span>
           </div>
-          <div class="start-badge badge-nae">苗から</div>
+          <div class="start-badge badge-nae">èãã</div>
         </div>
       </div>
       <div class="task-adv">
-        <strong>今週のアドバイス：</strong>脇芽が伸びすぎると養分が分散します。10cm以下うちに取り除きましょう。雨上がりは病気が広がりやすいので消毒もあおすすめです。
-        <div class="adv-btn">▼ 詳細を閉じる</div>
+        <strong>ä»é±ã®ã¢ããã¤ã¹ï¼</strong>èè½ãä¼¸ã³ãããã¨é¤åãåæ£ãã¾ãã10cmä»¥ä¸ãã¡ã«åãé¤ãã¾ããããé¨ä¸ããã¯çæ°ãåºãããããã®ã§æ¶æ¯ããããããã§ãã
+        <div class="adv-btn">â¼ è©³ç´°ãéãã</div>
       </div>
-      <div class="adv-btn" onclick="this.closest('.task-card').classList.toggle('open');this.textContent=this.closest('.task-card').classList.contains('open')?'▼ 詳細を閉じる':'▶ アドバイスを見る'">▶ アドバイスを見る</div>
+      <div class="adv-btn" onclick="this.closest('.task-card').classList.toggle('open');this.textContent=this.closest('.task-card').classList.contains('open')?'â¼ è©³ç´°ãéãã':'â¶ ã¢ããã¤ã¹ãè¦ã'">â¶ ã¢ããã¤ã¹ãè¦ã</div>
     </div>
   </div>
 
@@ -217,13 +221,13 @@ select.fi,input.fi{width:100%;padding:11px 14px;border-radius:8px;border:1.5px s
       <div class="task-top">
         <div class="chk"></div>
         <div class="task-info">
-          <div class="task-veg">🥬 コマツナ・楽天 — 畝2</div>
-          <div class="task-name">間引き（2回目）</div>
+          <div class="task-veg">ð¥¬ ã³ãããã»æ¥½å¤© â ç2</div>
+          <div class="task-name">éå¼ãï¼2åç®ï¼</div>
           <div class="chips">
-            <span class="chip c-phase">成長中</span>
-            <span class="chip c-mid">📅 今週中に</span>
+            <span class="chip c-phase">æé·ä¸­</span>
+            <span class="chip c-mid">ð ä»é±ä¸­ã«</span>
           </div>
-          <div class="start-badge badge-tane">種から</div>
+          <div class="start-badge badge-tane">ç¨®ãã</div>
         </div>
       </div>
     </div>
@@ -235,27 +239,27 @@ select.fi,input.fi{width:100%;padding:11px 14px;border-radius:8px;border:1.5px s
       <div class="task-top">
         <div class="chk done"></div>
         <div class="task-info">
-          <div class="task-veg">🍆 ナス・千両 — 畝3</div>
-          <div class="task-name done">収穫（6個目）</div>
+          <div class="task-veg">ð ãã¹ã»åä¸¡ â ç3</div>
+          <div class="task-name done">åç©«ï¼6åç®ï¼</div>
           <div class="chips">
-            <span class="chip c-phase">収穫中</span>
+            <span class="chip c-phase">åç©«ä¸­</span>
           </div>
         </div>
       </div>
     </div>
   </div>
 
-  <div class="sec">🌤 今後の予定</div>
+  <div class="sec">ð¤ ä»å¾ã®äºå®</div>
   <div class="task-card">
     <div class="task-stripe" style="background:#FF8F00"></div>
     <div class="task-body">
       <div class="task-top">
         <div class="chk"></div>
         <div class="task-info">
-          <div class="task-veg">🥕 ニンジン・向陽二号 — 畝4</div>
-          <div class="task-name">収穫予定（3/28）</div>
+          <div class="task-veg">ð¥ ãã³ã¸ã³ã»åé½äºå· â ç4</div>
+          <div class="task-name">åç©«äºå®ï¼3/28ï¼</div>
           <div class="chips">
-            <span class="chip c-hi">🎯 あと7日</span>
+            <span class="chip c-hi">ð¯ ãã¨7æ¥</span>
           </div>
         </div>
       </div>
@@ -268,12 +272,12 @@ select.fi,input.fi{width:100%;padding:11px 14px;border-radius:8px;border:1.5px s
       <div class="task-top">
         <div class="chk"></div>
         <div class="task-info">
-          <div class="task-veg">🌽 コーン・ゴールドラッシュ — 畝5</div>
-          <div class="task-name">発芽確認・間引き予定（4/5）</div>
+          <div class="task-veg">ð½ ã³ã¼ã³ã»ã´ã¼ã«ãã©ãã·ã¥ â ç5</div>
+          <div class="task-name">çºè½ç¢ºèªã»éå¼ãäºå®ï¼4/5ï¼</div>
           <div class="chips">
-            <span class="chip c-phase">発芽待ち</span>
+            <span class="chip c-phase">çºè½å¾ã¡</span>
           </div>
-          <div class="start-badge badge-tane">種から</div>
+          <div class="start-badge badge-tane">ç¨®ãã</div>
         </div>
       </div>
     </div>
@@ -282,66 +286,66 @@ select.fi,input.fi{width:100%;padding:11px 14px;border-radius:8px;border:1.5px s
 
 <!-- CROPS PAGE -->
 <div id="pg-crops" class="pg">
-  <div class="sec">🌱 栽培中の作物（5件）</div>
+  <div class="sec">ð± æ ½å¹ä¸­ã®ä½ç©ï¼5ä»¶ï¼</div>
 
   <div class="crop-card">
     <div class="crop-hdr">
-      <div class="crop-emoji">🍅</div>
+      <div class="crop-emoji">ð</div>
       <div class="crop-info">
-        <div class="crop-name">トマト・アイコ</div>
-        <div class="crop-meta">畝1 ｜ 苗から ｜ 植え付け：2/15 ｜ 収穫予定：5/10</div>
+        <div class="crop-name">ãããã»ã¢ã¤ã³</div>
+        <div class="crop-meta">ç1 ï½ èãã ï½ æ¤ãä»ãï¼2/15 ï½ åç©«äºå®ï¼5/10</div>
       </div>
-      <div class="plot-chip">畝1</div>
+      <div class="plot-chip">ç1</div>
     </div>
-    <div class="rotation-banner rotation-ok">✅ 輪作OK — ナス科は3年以上空いています</div>
+    <div class="rotation-banner rotation-ok">â è¼ªä½OK â ãã¹ç§ã¯3å¹´ä»¥ä¸ç©ºãã¦ãã¾ã</div>
     <div class="prog-wrap">
       <div class="prog-track"><div class="prog-fill" style="width:72%"></div></div>
-      <div class="prog-lbl"><span>植え付けから34日</span><span>収穫まで50日</span></div>
+      <div class="prog-lbl"><span>æ¤ãä»ããã34æ¥</span><span>åç©«ã¾ã§50æ¥</span></div>
     </div>
-    <div class="next-task">次のタスク → 脇芽かき・誘引作業（今日）</div>
+    <div class="next-task">æ¬¡ã®ã¿ã¹ã¯ â èè½ããã»èªå¼ä½æ¥­ï¼ä»æ¥ï¼</div>
     <div class="crop-acts">
-      <button class="del-btn" style="background:#E8F5E9;border-color:#A5D6A7;color:#2E7D32">✓ 収穫完了</button>
-      <button class="del-btn">🗑 削除</button>
+      <button class="del-btn" style="background:#E8F5E9;border-color:#A5D6A7;color:#2E7D32">â åç©«å®äº</button>
+      <button class="del-btn">ð åé¤</button>
     </div>
   </div>
 
   <div class="crop-card">
     <div class="crop-hdr">
-      <div class="crop-emoji">🥬</div>
+      <div class="crop-emoji">ð¥¬</div>
       <div class="crop-info">
-        <div class="crop-name">コマツナ・楽天</div>
-        <div class="crop-meta">畝2 ｜ 種から ｜ 播種：3/1 ｜ 収穫予定：4/15</div>
+        <div class="crop-name">ã³ãããã»æ¥½å¤©</div>
+        <div class="crop-meta">ç2 ï½ ç¨®ãã ï½ æ­ç¨®ï¼3/1 ï½ åç©«äºå®ï¼4/15</div>
       </div>
-      <div class="plot-chip">畝2</div>
+      <div class="plot-chip">ç2</div>
     </div>
     <div class="prog-wrap">
       <div class="prog-track"><div class="prog-fill" style="width:45%"></div></div>
-      <div class="prog-lbl"><span>播種から20日</span><span>収穫まで25日</span></div>
+      <div class="prog-lbl"><span>æ­ç¨®ãã20æ¥</span><span>åç©«ã¾ã§25æ¥</span></div>
     </div>
-    <div class="next-task">次のタスク → 間引き2回目（今週中）</div>
+    <div class="next-task">æ¬¡ã®ã¿ã¹ã¯ â éå¼ã2åç®ï¼ä»é±ä¸­ï¼</div>
     <div class="crop-acts">
-      <button class="del-btn" style="background:#E8F5E9;border-color:#A5D6A7;color:#2E7D32">✓ 収穫完了</button>
-      <button class="del-btn">🗑 削除</button>
+      <button class="del-btn" style="background:#E8F5E9;border-color:#A5D6A7;color:#2E7D32">â åç©«å®äº</button>
+      <button class="del-btn">ð åé¤</button>
     </div>
   </div>
 
   <div class="crop-card">
     <div class="crop-hdr">
-      <div class="crop-emoji">🍆</div>
+      <div class="crop-emoji">ð</div>
       <div class="crop-info">
-        <div class="crop-name">ナス・千両</div>
-        <div class="crop-meta">畝3 ｜ 苗から ｜ 植え付け：2/20 ｜ 収穫中</div>
+        <div class="crop-name">ãã¹ã»åä¸¡</div>
+        <div class="crop-meta">ç3 ï½ èãã ï½ æ¤ãä»ãï¼2/20 ï½ åç©«ä¸­</div>
       </div>
-      <div class="plot-chip warn" style="background:#FFF3E0;color:#E65100;border-color:#FFCC80">畝3</div>
+      <div class="plot-chip warn" style="background:#FFF3E0;color:#E65100;border-color:#FFCC80">ç3</div>
     </div>
-    <div class="rotation-banner rotation-warn">⚠️ 輪作注意 — ナス科の連作で土壌病害のリスクあり</div>
+    <div class="rotation-banner rotation-warn">â ï¸ è¼ªä½æ³¨æ â ãã¹ç§ã®é£ä½ã§åå£çå®³ã®ãªã¹ã¯ãã</div>
     <div class="prog-wrap">
       <div class="prog-track"><div class="prog-fill" style="width:89%"></div></div>
-      <div class="prog-lbl"><span>植え付けから29日</span><span>収穫中</span></div>
+      <div class="prog-lbl"><span>æ¤ãä»ããã29æ¥</span><span>åç©«ä¸­</span></div>
     </div>
     <div class="crop-acts">
-      <button class="del-btn" style="background:#E8F5E9;border-color:#A5D6A7;color:#2E7D32">✓ 収穫完了</button>
-      <button class="del-btn">🗑 削除</button>
+      <button class="del-btn" style="background:#E8F5E9;border-color:#A5D6A7;color:#2E7D32">â åç©«å®äº</button>
+      <button class="del-btn">ð åé¤</button>
     </div>
   </div>
 </div>
@@ -349,125 +353,125 @@ select.fi,input.fi{width:100%;padding:11px 14px;border-radius:8px;border:1.5px s
 <!-- REGISTER PAGE -->
 <div id="pg-register" class="pg">
   <div class="reg-card">
-    <div class="reg-ttl">🌱 新しい作物を登録</div>
+    <div class="reg-ttl">ð± æ°ããä½ç©ãç»é²</div>
 
     <div class="form-row">
-      <label class="form-lbl">作物を選ぶ</label>
+      <label class="form-lbl">ä½ç©ãé¸ã¶</label>
       <button class="cvs-trigger">
-        <span class="cvs-trigger-emoji">🍅</span>
-        <span class="cvs-trigger-label">トマト・アイコ（サカタのタネ）</span>
-        <span class="cvs-arrow">▼</span>
+        <span class="cvs-trigger-emoji">ð</span>
+        <span class="cvs-trigger-label">ãããã»ã¢ã¤ã³ï¼ãµã«ã¿ã®ã¿ãï¼</span>
+        <span class="cvs-arrow">â¼</span>
       </button>
     </div>
 
     <div class="form-row">
-      <label class="form-lbl">栽培方法</label>
+      <label class="form-lbl">æ ½å¹æ¹æ³</label>
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
-        <button class="z-btn on"><span class="z-name">🌱 苗から</span><span style="font-size:10px;color:inherit;opacity:.7">苗を購入して植え付け</span></button>
-        <button class="z-btn"><span class="z-name">🌾 種から</span><span style="font-size:10px;color:#7A6A5A;opacity:.7">種を直播き・育苗</span></button>
+        <button class="z-btn on"><span class="z-name">ð± èãã</span><span style="font-size:10px;color:inherit;opacity:.7">èãè³¼å¥ãã¦æ¤ãä»ã</span></button>
+        <button class="z-btn"><span class="z-name">ð¾ ç¨®ãã</span><span style="font-size:10px;color:#7A6A5A;opacity:.7">ç¨®ãç´æ­ãã»è²è</span></button>
       </div>
     </div>
 
     <div class="form-row">
-      <label class="form-lbl">栽培する畝</label>
+      <label class="form-lbl">æ ½å¹ããç</label>
       <div class="zone-grid">
-        <button class="z-btn on"><span class="z-name">畝1</span></button>
-        <button class="z-btn"><span class="z-name">畝2</span></button>
-        <button class="z-btn"><span class="z-name">畝3</span></button>
-        <button class="z-btn"><span class="z-name">畝4</span></button>
+        <button class="z-btn on"><span class="z-name">ç1</span></button>
+        <button class="z-btn"><span class="z-name">ç2</span></button>
+        <button class="z-btn"><span class="z-name">ç3</span></button>
+        <button class="z-btn"><span class="z-name">ç4</span></button>
       </div>
     </div>
 
     <div class="form-row">
-      <label class="form-lbl">植え付け日 / 播種日</label>
+      <label class="form-lbl">æ¤ãä»ãæ¥ / æ­ç¨®æ¥</label>
       <input class="fi" type="date" value="2026-03-21">
     </div>
 
-    <div class="rotation-banner rotation-ok" style="margin-top:4px">✅ 輪作OK — ナス科は3年以上空いています</div>
+    <div class="rotation-banner rotation-ok" style="margin-top:4px">â è¼ªä½OK â ãã¹ç§ã¯3å¹´ä»¥ä¸ç©ºãã¦ãã¾ã</div>
 
-    <div class="reg-hint">畝1に植え付け可能です</div>
-    <button class="btn-main">登録する</button>
-    <button class="btn-sub">キャンセル</button>
+    <div class="reg-hint">ç1ã«æ¤ãä»ãå¯è½ã§ã</div>
+    <button class="btn-main">ç»é²ãã</button>
+    <button class="btn-sub">ã­ã£ã³ã»ã«</button>
   </div>
 </div>
 
 <!-- SHOP PAGE -->
 <div id="pg-shop" class="pg">
   <div style="background:#E8F5E9;border-radius:12px;padding:12px 14px;margin-bottom:14px;font-size:12px;color:#2E7D20;line-height:1.6">
-    🛒 全作物で使える厳選資材。タップしてAmazon・楽天で購入できます。
+    ð å¨ä½ç©ã§ä½¿ããå³é¸è³æãã¿ãããã¦Amazonã»æ¥½å¤©ã§è³¼å¥ã§ãã¾ãã
   </div>
 
   <div class="shop-section">
-    <div class="shop-section-title">🍅 夏野菜の苗・種</div>
+    <div class="shop-section-title">ð å¤éèã®èã»ç¨®</div>
     <div class="shop-grid">
       <a class="shop-card" href="#" onclick="return false">
-        <div class="shop-img">🍅</div>
+        <div class="shop-img">ð</div>
         <div class="shop-info">
-          <div class="shop-name">トマト アイコ 苗（サカタのタネ）</div>
-          <div class="shop-price">¥ 398〜</div>
-          <div class="shop-site">Amazon / 楽天</div>
+          <div class="shop-name">ããã ã¢ã¤ã³ èï¼ãµã«ã¿ã®ã¿ãï¼</div>
+          <div class="shop-price">Â¥ 398ã</div>
+          <div class="shop-site">Amazon / æ¥½å¤©</div>
         </div>
       </a>
       <a class="shop-card" href="#" onclick="return false">
-        <div class="shop-img">🍆</div>
+        <div class="shop-img">ð</div>
         <div class="shop-info">
-          <div class="shop-name">ナス 千両2号 苗（タキイ種苗）</div>
-          <div class="shop-price">¥ 298〜</div>
-          <div class="shop-site">Amazon / 楽天</div>
+          <div class="shop-name">ãã¹ åä¸¡2å· èï¼ã¿ã­ã¤ç¨®èï¼</div>
+          <div class="shop-price">Â¥ 298ã</div>
+          <div class="shop-site">Amazon / æ¥½å¤©</div>
         </div>
       </a>
       <a class="shop-card" href="#" onclick="return false">
-        <div class="shop-img">🫑</div>
+        <div class="shop-img">ð«</div>
         <div class="shop-info">
-          <div class="shop-name">ピーマン 京なみ 苗（サカタ）</div>
-          <div class="shop-price">¥ 258〜</div>
-          <div class="shop-site">Amazon / 楽天</div>
+          <div class="shop-name">ãã¼ãã³ äº¬ãªã¿ èï¼ãµã«ã¿ï¼</div>
+          <div class="shop-price">Â¥ 258ã</div>
+          <div class="shop-site">Amazon / æ¥½å¤©</div>
         </div>
       </a>
       <a class="shop-card" href="#" onclick="return false">
-        <div class="shop-img">🌽</div>
+        <div class="shop-img">ð½</div>
         <div class="shop-info">
-          <div class="shop-name">トウモロコシ ゴールドラッシュ 種</div>
-          <div class="shop-price">¥ 462〜</div>
-          <div class="shop-site">Amazon / 楽天</div>
+          <div class="shop-name">ãã¦ã¢ã­ã³ã· ã´ã¼ã«ãã©ãã·ã¥ ç¨®</div>
+          <div class="shop-price">Â¥ 462ã</div>
+          <div class="shop-site">Amazon / æ¥½å¤©</div>
         </div>
       </a>
     </div>
   </div>
 
   <div class="shop-section">
-    <div class="shop-section-title">🌿 葉物・根菜の種</div>
+    <div class="shop-section-title">ð¿ èç©ã»æ ¹èã®ç¨®</div>
     <div class="shop-grid">
       <a class="shop-card" href="#" onclick="return false">
-        <div class="shop-img">🥬</div>
+        <div class="shop-img">ð¥¬</div>
         <div class="shop-info">
-          <div class="shop-name">コマツナ 楽天 種（サカタのタネ）</div>
-          <div class="shop-price">¥ 264〜</div>
-          <div class="shop-site">Amazon / 楽天</div>
+          <div class="shop-name">ã³ããã æ¥½å¤© ç¨®ï¼ãµã«ã¿ã®ã¿ãï¼</div>
+          <div class="shop-price">Â¥ 264ã</div>
+          <div class="shop-site">Amazon / æ¥½å¤©</div>
         </div>
       </a>
       <a class="shop-card" href="#" onclick="return false">
-        <div class="shop-img">🥕</div>
+        <div class="shop-img">ð¥</div>
         <div class="shop-info">
-          <div class="shop-name">ニンジン 向陽二号 種（坂田）</div>
-          <div class="shop-price">¥ 330〜</div>
-          <div class="shop-site">Amazon / 楽天</div>
+          <div class="shop-name">ãã³ã¸ã³ åé½äºå· ç¨®ï¼åç°ï¼</div>
+          <div class="shop-price">Â¥ 330ã</div>
+          <div class="shop-site">Amazon / æ¥½å¤©</div>
         </div>
       </a>
       <a class="shop-card" href="#" onclick="return false">
-        <div class="shop-img">🫚</div>
+        <div class="shop-img">ð«</div>
         <div class="shop-info">
-          <div class="shop-name">オクラ グリーンスター 種（サカタのタネ）</div>
-          <div class="shop-price">¥ 385〜</div>
-          <div class="shop-site">Amazon / 楽天</div>
+          <div class="shop-name">ãªã¯ã© ã°ãªã¼ã³ã¹ã¿ã¼ ç¨®ï¼ãµã«ã¿ã®ã¿ãï¼</div>
+          <div class="shop-price">Â¥ 385ã</div>
+          <div class="shop-site">Amazon / æ¥½å¤©</div>
         </div>
       </a>
       <a class="shop-card" href="#" onclick="return false">
-        <div class="shop-img">🌱</div>
+        <div class="shop-img">ð±</div>
         <div class="shop-info">
-          <div class="shop-name">枝豆 おつな姫 種（サカタのタネ）</div>
-          <div class="shop-price">¥ 462〜</div>
-          <div class="shop-site">Amazon / 楽天</div>
+          <div class="shop-name">æè± ãã¤ãªå§« ç¨®ï¼ãµã«ã¿ã®ã¿ãï¼</div>
+          <div class="shop-price">Â¥ 462ã</div>
+          <div class="shop-site">Amazon / æ¥½å¤©</div>
         </div>
       </a>
     </div>
@@ -476,86 +480,86 @@ select.fi,input.fi{width:100%;padding:11px 14px;border-radius:8px;border:1.5px s
 
 <!-- PLOTS PAGE -->
 <div id="pg-plots" class="pg">
-  <div class="sec">🗺 畝の管理（5畝）</div>
+  <div class="sec">ðº çã®ç®¡çï¼5çï¼</div>
   <div class="plot-card">
     <div class="plot-card-hdr">
-      <div class="plot-name-big">畝1</div>
-      <div class="plot-status-badge badge-growing" style="background:#E8F5E9;color:#2E7D32;border:1px solid #A5D6A7">栽培中</div>
+      <div class="plot-name-big">ç1</div>
+      <div class="plot-status-badge badge-growing" style="background:#E8F5E9;color:#2E7D32;border:1px solid #A5D6A7">æ ½å¹ä¸­</div>
     </div>
     <div class="plot-history">
       <div class="plot-hist-row">
-        <div class="plot-hist-year">2026年</div>
-        <div class="plot-hist-veg">🍅 トマト・アイコ</div>
-        <div class="plot-hist-badge" style="background:#E8F5E9;color:#2E7D32">現在</div>
+        <div class="plot-hist-year">2026å¹´</div>
+        <div class="plot-hist-veg">ð ãããã»ã¢ã¤ã³</div>
+        <div class="plot-hist-badge" style="background:#E8F5E9;color:#2E7D32">ç¾å¨</div>
       </div>
       <div class="plot-hist-row">
-        <div class="plot-hist-year">2025年</div>
-        <div class="plot-hist-veg">🥬 コマツナ</div>
-        <div class="plot-hist-badge" style="background:#EDE7F6;color:#4527A0">完了</div>
-      </div>
-    </div>
-  </div>
-  <div class="plot-card">
-    <div class="plot-card-hdr">
-      <div class="plot-name-big">畝2</div>
-      <div class="plot-status-badge badge-growing" style="background:#E8F5E9;color:#2E7D32;border:1px solid #A5D6A7">栽培中</div>
-    </div>
-    <div class="plot-history">
-      <div class="plot-hist-row">
-        <div class="plot-hist-year">2026年</div>
-        <div class="plot-hist-veg">🥬 コマツナ・楽天</div>
-        <div class="plot-hist-badge" style="background:#E8F5E9;color:#2E7D32">現在</div>
+        <div class="plot-hist-year">2025å¹´</div>
+        <div class="plot-hist-veg">ð¥¬ ã³ããã</div>
+        <div class="plot-hist-badge" style="background:#EDE7F6;color:#4527A0">å®äº</div>
       </div>
     </div>
   </div>
   <div class="plot-card">
     <div class="plot-card-hdr">
-      <div class="plot-name-big">畝3</div>
-      <div class="plot-status-badge" style="background:#FFF9C4;color:#F57F17;border:1px solid #FFE082">収穫中</div>
+      <div class="plot-name-big">ç2</div>
+      <div class="plot-status-badge badge-growing" style="background:#E8F5E9;color:#2E7D32;border:1px solid #A5D6A7">æ ½å¹ä¸­</div>
     </div>
     <div class="plot-history">
       <div class="plot-hist-row">
-        <div class="plot-hist-year">2026年</div>
-        <div class="plot-hist-veg">🍆 ナス・千両</div>
-        <div class="plot-hist-badge" style="background:#FFF9C4;color:#F57F17">収穫中</div>
+        <div class="plot-hist-year">2026å¹´</div>
+        <div class="plot-hist-veg">ð¥¬ ã³ãããã»æ¥½å¤©</div>
+        <div class="plot-hist-badge" style="background:#E8F5E9;color:#2E7D32">ç¾å¨</div>
+      </div>
+    </div>
+  </div>
+  <div class="plot-card">
+    <div class="plot-card-hdr">
+      <div class="plot-name-big">ç3</div>
+      <div class="plot-status-badge" style="background:#FFF9C4;color:#F57F17;border:1px solid #FFE082">åç©«ä¸­</div>
+    </div>
+    <div class="plot-history">
+      <div class="plot-hist-row">
+        <div class="plot-hist-year">2026å¹´</div>
+        <div class="plot-hist-veg">ð ãã¹ã»åä¸¡</div>
+        <div class="plot-hist-badge" style="background:#FFF9C4;color:#F57F17">åç©«ä¸­</div>
       </div>
     </div>
   </div>
 
   <div class="upgrade-card" id="pg-plan">
-    <div class="upgrade-title">🌾 プランをアップグレード</div>
-    <div style="font-size:13px;opacity:.8;margin-bottom:12px">現在：無料プラン（5畝まで）</div>
+    <div class="upgrade-title">ð¾ ãã©ã³ãã¢ããã°ã¬ã¼ã</div>
+    <div style="font-size:13px;opacity:.8;margin-bottom:12px">ç¾å¨ï¼ç¡æãã©ã³ï¼5çã¾ã§ï¼</div>
     <div class="upgrade-plan-list">
       <div class="upgrade-plan-item">
-        <div class="upgrade-plan-name">🌿 ひろびろ</div>
-        <div class="upgrade-plan-desc">10畝まで（＋5畝）</div>
-        <div class="upgrade-plan-price">¥100 / 月</div>
-        <div class="upgrade-plan-preview">畝1〜畝10まで使えます</div>
-        <button class="btn-upgrade">🔜 準備中</button>
+        <div class="upgrade-plan-name">ð¿ ã²ãã³ã</div>
+        <div class="upgrade-plan-desc">10çã¾ã§ï¼ï¼5çï¼</div>
+        <div class="upgrade-plan-price">Â¥100 / æ</div>
+        <div class="upgrade-plan-preview">ç1ãç10ã¾ã§ä½¿ãã¾ã</div>
+        <button class="btn-upgrade">ð æºåä¸­</button>
       </div>
       <div class="upgrade-plan-item">
-        <div class="upgrade-plan-name">🌳 のびのび</div>
-        <div class="upgrade-plan-desc">20畝まで（＋15畝）</div>
-        <div class="upgrade-plan-price">¥200 / 月</div>
-        <button class="btn-upgrade">🔜 準備中</button>
+        <div class="upgrade-plan-name">ð³ ã®ã³ã®ã³</div>
+        <div class="upgrade-plan-desc">20çã¾ã§ï¼ï¼15çï¼</div>
+        <div class="upgrade-plan-price">Â¥200 / æ</div>
+        <button class="btn-upgrade">ð æºåä¸­</button>
       </div>
       <div class="upgrade-plan-item">
-        <div class="upgrade-plan-name">🚜 ほぼ農家</div>
-        <div class="upgrade-plan-desc">100畝まで（＋95畝）</div>
-        <div class="upgrade-plan-price">¥300 / 月</div>
-        <button class="btn-upgrade">🔜 準備中</button>
+        <div class="upgrade-plan-name">ð ã»ã¼è¾²å®¶</div>
+        <div class="upgrade-plan-desc">100çã¾ã§ï¼ï¼95çï¼</div>
+        <div class="upgrade-plan-price">Â¥300 / æ</div>
+        <button class="btn-upgrade">ð æºåä¸­</button>
       </div>
     </div>
-    <div class="upgrade-coming-soon">🔜 有料プランは近日公開予定です。もうしばらくお待ちください！</div>
+    <div class="upgrade-coming-soon">ð ææãã©ã³ã¯è¿æ¥å¬éäºå®ã§ãããããã°ãããå¾ã¡ãã ããï¼</div>
   </div>
 </div>
 
 <nav class="nav">
-  <button class="nav-btn on" id="nav-today" onclick="goPage('today')"><span class="nav-icon">☀️</span>今日</button>
-  <button class="nav-btn" id="nav-crops" onclick="goPage('crops')"><span class="nav-icon">🌿</span>作物</button>
-  <button class="nav-btn" id="nav-register" onclick="goPage('register')"><span class="nav-icon">＋</span>登録</button>
-  <button class="nav-btn" id="nav-plots" onclick="goPage('plots')"><span class="nav-icon">🗺</span>畝</button>
-  <button class="nav-btn" id="nav-shop" onclick="goPage('shop')"><span class="nav-icon">🛒</span>商店</button>
+  <button class="nav-btn on" id="nav-today" onclick="goPage('today')"><span class="nav-icon">âï¸</span>ä»æ¥</button>
+  <button class="nav-btn" id="nav-crops" onclick="goPage('crops')"><span class="nav-icon">ð¿</span>ä½ç©</button>
+  <button class="nav-btn" id="nav-register" onclick="goPage('register')"><span class="nav-icon">ï¼</span>ç»é²</button>
+  <button class="nav-btn" id="nav-plots" onclick="goPage('plots')"><span class="nav-icon">ðº</span>ç</button>
+  <button class="nav-btn" id="nav-shop" onclick="goPage('shop')"><span class="nav-icon">ð</span>ååº</button>
 </nav>
 
 <div class="toast" id="toast"></div>
@@ -568,6 +572,12 @@ function goPage(id){
   var nb = document.getElementById('nav-'+id);
   if(el) el.classList.add('on');
   if(nb) nb.classList.add('on');
+}
+</script>
+
+<script>
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/zubora-saien/sw.js');
 }
 </script>
 </body>
