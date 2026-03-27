@@ -764,7 +764,25 @@ select.fi:focus,input.fi:focus{outline:none;border-color:#2E7D32}
       <p>本アプリの栽培データは端末のローカルストレージに保存されます。端末の故障、アプリの削除、ブラウザデータの消去等により、データが失われる場合があります。重要なデータは利用者ご自身でバックアップを取ることをお勧めします。</p>
     </div>
   </div>
+  <div class="disc-section">
+    <div class="disc-title">🔄 データリセット</div>
+    <div class="disc-body">
+      <p>すべての栽培データ・設定を削除し、チュートリアルから再スタートします。この操作は取り消せません。</p>
+    </div>
+    <button onclick="confirmReset()" style="margin-top:12px;width:100%;padding:12px;border-radius:10px;border:1.5px solid #FFCDD2;background:#fff;font-family:inherit;font-size:14px;font-weight:700;cursor:pointer;color:#C62828">🗑️ すべてのデータを削除して初期化</button>
+  </div>
   <div style="text-align:center;padding:16px 0;font-size:11px;color:#7A6A5A">ズボラ菜園 v1.0</div>
+</div>
+
+<!-- リセット確認モーダル -->
+<div class="modal-overlay" id="modal-reset" onclick="closeModal('modal-reset')">
+  <div class="modal-sheet" onclick="event.stopPropagation()">
+    <div class="modal-handle"></div>
+    <div class="modal-title">⚠️ 本当にリセットしますか？</div>
+    <div style="font-size:13px;color:#555;line-height:1.7;margin-bottom:16px">すべての作物データ、区画データ、完了履歴、設定が削除されます。チュートリアルが再度表示されます。</div>
+    <button onclick="doReset()" style="width:100%;padding:12px;border-radius:10px;border:none;background:#C62828;color:#fff;font-family:inherit;font-size:14px;font-weight:700;cursor:pointer;margin-bottom:8px">リセットする</button>
+    <button onclick="closeModal('modal-reset')" style="width:100%;padding:12px;border-radius:10px;border:1px solid #E0D8CE;background:#fff;font-family:inherit;font-size:14px;font-weight:700;cursor:pointer;color:#7A6A5A">キャンセル</button>
+  </div>
 </div>
 
 <nav class="nav">
@@ -3532,12 +3550,27 @@ function closeTutorial(){
     }
     localStorage.setItem('zs_plots_initialized','1');
   }
-  drawToday();updDbg();
+  drawToday();
   // 初回のみチュートリアル表示
   if(!localStorage.getItem('zs_tutorial_done')){
     setTimeout(showTutorial, 400);
   }
 })();
+
+function confirmReset(){
+  document.getElementById('modal-reset').classList.add('on');
+}
+function doReset(){
+  localStorage.removeItem('zs_crops');
+  localStorage.removeItem('zs_done');
+  localStorage.removeItem('zs_plots');
+  localStorage.removeItem('zs_plots_initialized');
+  localStorage.removeItem('zs_tutorial_done');
+  localStorage.removeItem('zs_zone');
+  localStorage.removeItem('zs_upgrade');
+  closeModal('modal-reset');
+  location.reload();
+}
 </script>
 </body>
 </html>
