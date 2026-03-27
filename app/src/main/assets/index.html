@@ -12,6 +12,14 @@ body{font-family:'Noto Sans JP',sans-serif;background:#F5F0EA;color:#1A1008;min-
 .hdr-row{display:flex;align-items:center;justify-content:space-between}
 .hdr-title{font-size:18px;font-weight:900}
 .hdr-date{font-size:11px;opacity:.6;background:rgba(255,255,255,.1);padding:3px 10px;border-radius:12px}
+.hdr-gear{font-size:18px;cursor:pointer;opacity:.6;padding:3px 6px;border:none;background:none;color:#fff;line-height:1}
+.hdr-gear:hover{opacity:1}
+.disc-section{background:#fff;border-radius:14px;border:1px solid #E0D8CE;box-shadow:0 2px 12px rgba(44,26,14,.08);padding:18px;margin-bottom:12px}
+.disc-title{font-size:15px;font-weight:700;margin-bottom:12px;color:#1A1008}
+.disc-body{font-size:13px;color:#555;line-height:1.8}
+.disc-body h3{font-size:13px;font-weight:700;color:#2C1A0E;margin:14px 0 6px;padding-left:6px;border-left:3px solid #43A047}
+.disc-body p{margin-bottom:8px}
+.disc-back{display:inline-flex;align-items:center;gap:4px;font-size:13px;font-weight:700;color:#2E7D32;cursor:pointer;border:none;background:none;font-family:inherit;padding:8px 0;margin-bottom:12px}
 .nav{position:fixed;bottom:0;left:0;right:0;background:#2C1A0E;display:flex;z-index:100;padding-bottom:env(safe-area-inset-bottom)}
 .nav-btn{flex:1;display:flex;flex-direction:column;align-items:center;padding:9px 4px 8px;border:none;background:none;color:rgba(255,255,255,.45);font-family:inherit;font-size:10px;font-weight:700;cursor:pointer;gap:3px}
 .nav-btn.on{color:#fff}
@@ -356,7 +364,10 @@ select.fi:focus,input.fi:focus{outline:none;border-color:#2E7D32}
 <div class="hdr">
   <div class="hdr-row">
     <div class="hdr-title">🌱 ズボラ菜園</div>
-    <div class="hdr-date" id="hdr-date"></div>
+    <div style="display:flex;align-items:center;gap:8px">
+      <div class="hdr-date" id="hdr-date"></div>
+      <button class="hdr-gear" onclick="goPage('settings')" aria-label="設定">⚙️</button>
+    </div>
   </div>
 </div>
 
@@ -728,6 +739,32 @@ select.fi:focus,input.fi:focus{outline:none;border-color:#2E7D32}
     <button class="btn-main" onclick="addHistory()">記録する</button>
   </div>
 </div>
+</div>
+
+<div id="pg-settings" class="pg">
+  <button class="disc-back" onclick="goPage('today')">← 戻る</button>
+  <div class="sec">⚙️ 設定・情報</div>
+  <div class="disc-section">
+    <div class="disc-title">📋 免責事項</div>
+    <div class="disc-body">
+      <h3>一般事項</h3>
+      <p>本アプリ「ズボラ菜園」（以下「本アプリ」）は、家庭菜園の栽培管理を支援する目的で提供されています。本アプリに掲載されている情報は、可能な限り正確なものとなるよう努めておりますが、その正確性、完全性、最新性等について一切保証するものではありません。</p>
+      <p>本アプリの利用により生じたいかなる損害（直接的・間接的を問わず）についても、開発者は一切の責任を負いません。本アプリは「現状のまま」提供されており、利用者の自己責任においてご利用ください。</p>
+      <p>本アプリの内容は予告なく変更・削除される場合があります。また、本アプリの運営を予告なく中止・終了する場合があります。</p>
+
+      <h3>栽培情報について</h3>
+      <p>本アプリで提供する栽培スケジュール、作業内容、水やり目安、肥料・農薬に関する情報等はあくまで一般的な参考情報であり、実際の栽培結果や収穫量を保証するものではありません。</p>
+      <p>栽培の成果は、気候、土壌、品種、栽培環境、管理方法等の多くの要因に左右されます。本アプリの情報に基づいて栽培を行った結果、作物の不作、枯死、品質低下等が生じた場合でも、開発者は一切の責任を負いません。</p>
+      <p>農薬や肥料の使用については、必ず各製品の使用説明書および地域の法令・規制に従ってください。</p>
+
+      <h3>商品リンクについて</h3>
+      <p>本アプリ内の商品リンクはアフィリエイトリンクを含む場合があります。リンク先の商品の品質、安全性、取引条件等について、開発者は一切の責任を負いません。商品の購入は利用者ご自身の判断と責任において行ってください。</p>
+
+      <h3>データの取り扱い</h3>
+      <p>本アプリの栽培データは端末のローカルストレージに保存されます。端末の故障、アプリの削除、ブラウザデータの消去等により、データが失われる場合があります。重要なデータは利用者ご自身でバックアップを取ることをお勧めします。</p>
+    </div>
+  </div>
+  <div style="text-align:center;padding:16px 0;font-size:11px;color:#7A6A5A">ズボラ菜園 v1.0</div>
 </div>
 
 <nav class="nav">
